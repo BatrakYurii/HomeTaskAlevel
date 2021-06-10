@@ -10,7 +10,7 @@ namespace Master
             Colleague2 colleague2 = new Colleague2();
             new ConcreteMediator(colleague1, colleague2);
 
-            Console.WriteLine("Client triggets operation A.");
+            Console.WriteLine("Client triggets operation.");
             colleague1.ActionColleague1();    
 
 

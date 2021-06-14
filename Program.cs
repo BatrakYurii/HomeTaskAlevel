@@ -6,7 +6,17 @@ namespace Master
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var arrayStack = new Stack<string>();
+            arrayStack.Push("First element");
+            arrayStack.Push("Second element");
+            arrayStack.Push("Third element");
+
+            Console.WriteLine(arrayStack.Peek());
+
+            arrayStack.Pop();
+            arrayStack.Push("Last element");
+
+            Console.WriteLine(arrayStack.Peek());
         }
     }
 }

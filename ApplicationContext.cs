@@ -19,10 +19,12 @@ namespace Master
         public DbSet<CartItem> CartItems { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
 
         public ApplicationContext()
         {
-            Database.EnsureCreated();
+            //Database.EnsureCreated();
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -205,6 +207,52 @@ namespace Master
                         {
                             CartId=4,ProductId=3,Count=6,id=6
                         }
+                    }
+                );
+            modelbuilder.Entity<Order>()
+                .HasData
+                (
+                    new List<Order>
+                    {
+                        new Order
+                        {
+                            UserId=1,DiscountId=1,Total=500,id=1
+                        },
+                        new Order
+                        {
+                            UserId=2,DiscountId=3,Total=1700,id=2
+                        },
+                        new Order
+                        {
+                            UserId=3,DiscountId=3,Total=800,id=3
+                        },
+                        new Order
+                        {
+                            UserId=4,DiscountId=2,Total=1700,id=4
+                        }
+                    }
+                );
+            modelbuilder.Entity<OrderItem>()
+                .HasData
+                (
+                    new List<OrderItem>
+                    {
+                        new OrderItem
+                        {
+                            OrderId=1,ProductId=2,Count=1,id=1
+                        },
+                        new OrderItem
+                        {
+                            OrderId=2,ProductId=5,Count=5,id=2
+                        },
+                        new OrderItem
+                        {
+                            OrderId=3,ProductId=2,Count=3,id=3
+                        },
+                        new OrderItem
+                        {
+                            OrderId=4,ProductId=1,Count=2,id=4
+                        },
                     }
                 );
         }

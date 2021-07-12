@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+
 
 namespace Master
 {
@@ -6,7 +8,7 @@ namespace Master
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            ApplicationContext ctx = new ApplicationContext();
         }
     }
 }
